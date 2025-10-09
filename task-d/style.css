@@ -1,0 +1,72 @@
+h1 {
+    color: darkblue;
+}
+
+p {
+    font-size: 16px;
+}
+
+.box {
+    border: 2px solid black;
+    padding: 10px;
+    background-color: lightgray;
+}
+
+.highlight {
+    background-color: yellow;
+    padding: 10px;
+}
+
+
+#special-message {
+    color: crimson;
+    font-weight: bold;
+}
+
+
+h1,
+h2,
+h3,
+p {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+
+section ul li {
+    color: green;
+    list-style-type: square;
+}
+
+
+a[target="_blank"] {
+    color: purple;
+    text-decoration: underline;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+ul {
+    text-align: center;
+    padding-left: 0;
+}
+
+img [alt] {
+    border: 2px solid blue;
+    padding: 5px;
+    border-radius: 5px;
+    width: 150px;
+}
+
+
+/*#parti {
+  color: blue;          
+  font-weight: bold;    
+  font-size: 18px;      
+  padding: 5px;         
+  }
+  */
