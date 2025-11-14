@@ -17,25 +17,90 @@ document.addEventListener("DOMContentLoaded", () => {
         const birthdate = document.getElementById("date").value.trim();
         const terms = document.getElementById("terms").checked;
 
+        const errors = {
+            fullname: document.getElementById('fnameError'),
+            email: document.getElementById('emailError'),
+            phone: document.getElementById('phoneError'),
+            birthdate: document.getElementById('birthdateError'),
+            acceptedTerms: document.getElementById('termsError'),
+        };
 
-            // Basic validation
-            if (!fullName || !email || !phone || !birthdate) {
-                alert("Please fill in all fields.");
-                return;
-            }
+         // Clear old errors
+        Object.values(errors).forEach(err => err.textContent = "");
 
-            if (!terms) {
-                alert("You must accept the terms and conditions.");
-                return;
-            }
+        let valid = true;
+         // FULL NAME
+        if (fullName === "") {
+            errors.fullname.textContent = "Full name is required.";
+            valid = false;
+        } else if (fullName.split(" ").length < 2) {
+            errors.fullname.textContent = "Please include first and last name.";
+            valid = false;
+        }
 
-            // Timestamp
-            const timestamp = new Date().toLocaleString();
+        // EMAIL
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email === "") {
+            errors.email.textContent = "Email is required.";
+            valid = false;
+        } else if (!emailPattern.test(email)) {
+            errors.email.textContent = "Please enter a valid email address.";
+            valid = false;
+        }
 
-            // Create table row
-            const row = document.createElement("tr");
+        // PHONE
+        const phonePattern = /^[0-9+\s()-]{7,15}$/;
+        if (phone === "") {
+            errors.phone.textContent = "Phone number is required.";
+            valid = false;
+        } else if (!phonePattern.test(phone)) {
+            errors.phone.textContent = "Invalid phone number.";
+            valid = false;
+        }
 
-            row.innerHTML = `
+        // BIRTHDATE
+        if (birthdate === "") {
+            errors.birthdate.textContent = "Birth date is required.";
+            valid = false;
+        }
+
+        // TERMS
+        if (!terms) {
+            errors.acceptedTerms.textContent = "You must accept the terms.";
+            valid = false;
+        }
+
+        // STOP if validation failed
+        if (!valid) return;
+
+
+
+
+
+
+
+      /*  // Basic validation
+        if (!fullName || !email || !phone || !birthdate) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        if (!terms) {
+            alert("You must accept the terms and conditions.");
+            return;
+        }
+            */
+            
+
+
+
+        // Timestamp
+        const timestamp = new Date().toLocaleString();
+
+        // Create table row
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
             <td>${timestamp}</td>
             <td>${fullName}</td>
             <td>${email}</td>
@@ -43,17 +108,17 @@ document.addEventListener("DOMContentLoaded", () => {
             <td>${birthdate}</td>
         `;
 
-            // Add row to table
-            tableBody.appendChild(row);
+        // Add row to table
+        tableBody.appendChild(row);
 
-            // Reset form
-            form.reset();
-        });
-
-        // Clear button resets the form automatically, but we can add focus reset
-        const clearBtn = document.getElementById("clearBtn");
-        clearBtn.addEventListener("click", () => {
-            form.reset();
-            document.getElementById("Fname").focus();
-        });
+        // Reset form
+        form.reset();
     });
+
+    // Clear button resets the form automatically, but we can add focus reset
+    const clearBtn = document.getElementById("clearBtn");
+    clearBtn.addEventListener("click", () => {
+        form.reset();
+        document.getElementById("Fname").focus();
+    });
+});

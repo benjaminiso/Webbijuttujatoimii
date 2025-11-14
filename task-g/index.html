@@ -32,29 +32,33 @@
       <section class="controls" aria-label="Forms row">
         <h2 class="controls-title">Forms</h2>
 
-        <form id="Full name">
+        <form id="Full-name" novalidate>
           <div class="form-row">
             <label for="Full name">Full name</label>
             <input id="Fname" name="Full name" type="text"  placeholder="e.g., Benjamin Isohanni" required>
+            <span id="fnameError" class="error"></span>
           </div>
             <div class="form-row">
                 <label for="email"> email</label>
                 <input id="email" name="email" type="email"  placeholder="e.g., benjamin@example.com" required>
+                <span id="emailError" class="error"></span>
           </div>
 
             <div class="form-row">
                 <label for="phone">Phone number</label>
                 <input id="phone" name="phone" type="tel"  placeholder="e.g., +358401234567" required>
+                <span id="phoneError" class="error"></span>
             </div>
             <div class="form-row">
                 <label for="birthdate">Birth date</label>
                 <input id="date" name="birthdate" type="date"  placeholder="e.g., 2000-01-01" required>
+                <span id="birthdateError" class="error"></span>
             </div>
             <div>
 
                 <label for="terms">Accept terms and conditions</label>
                 <input type="checkbox" id="terms" name="terms" >
-
+                <span id="termsError" class="error"></span>
          
 
           <div class="form-row">
