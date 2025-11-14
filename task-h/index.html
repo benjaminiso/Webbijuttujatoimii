@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page – Task H</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-amber-900 text-white p-6 shadow-md">
+
+
+        <h1 class="text-3xl font-semibold text-center">Registration Page</h1>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- Student Info -->
+            <section class="bg-gray-200 p-6 rounded-lg shadow">
+                <h2 class="text-xl font-bold mb-4">Student Information</h2>
+                <p class="font-medium">Name: Benjamin Isohanni</p>
+                <p class="text-slate-600">Group: NTIS24K</p>
+            </section>
+
+            <!-- Form -->
+            <section class="md:col-span-2 bg-gray-200 p-6 rounded-lg shadow">
+
+                <h2 class="text-xl font-bold mb-4">Registration Form</h2>
+                <form id="registrationForm" novalidate class="space-y-4">
+
+                    <!-- Full Name -->
+                    <div>
+                        <label for="Fname" class="block font-medium mb-1">Full Name</label>
+                        <input id="Fname" type="text" placeholder="e.g., Benjamin Isohanni"
+                            class="w-full border border-slate-300 rounded-md p-2 focus:ring-2 focus:ring-amber-900">
+                        <div id="fnameError" class="text-red-600 text-sm mt-1"></div>
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block font-medium mb-1">Email</label>
+                        <input id="email" type="email" placeholder="e.g., benjamin@example.com"
+                            class="w-full border border-slate-300 rounded-md p-2 focus:ring-2 focus:ring-amber-900">
+                        <div id="emailError" class="text-red-600 text-sm mt-1"></div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div>
+                        <label for="phone" class="block font-medium mb-1">Phone Number</label>
+                        <input id="phone" type="tel" placeholder="e.g., +358401234567"
+                            class="w-full border border-slate-300 rounded-md p-2 focus:ring-2 focus:ring-amber-900">
+                        <div id="phoneError" class="text-red-600 text-sm mt-1"></div>
+                    </div>
+
+                    <!-- Birth Date -->
+                    <div>
+                        <label for="date" class="block font-medium mb-1">Birth Date</label>
+                        <input id="date" type="date"
+                            class="w-full border border-slate-300 rounded-md p-2 focus:ring-2 focus:ring-indigo-400">
+                        <div id="birthdateError" class="text-red-600 text-sm mt-1"></div>
+                    </div>
+
+                    <!-- Terms Checkbox -->
+                    <div class="flex items-center">
+                        <input type="checkbox" id="terms" class="mr-2">
+                        <label for="terms" class="font-medium">Accept terms and conditions</label>
+                    </div>
+                    <div id="termsError" class="text-red-600 text-sm mt-1 ml-6"></div>
+
+                    <!-- Buttons -->
+                    <div class="flex gap-4 mt-4">
+                        <button type="submit"
+                            class="bg-amber-900 text-white px-4 py-2 rounded-md hover:bg-amber-500 transition">
+                            Submit
+                        </button>
+                        <button type="reset"
+                            class="bg-gray-300 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-400 transition">
+                            Clear
+                        </button>
+                    </div>
+
+                </form>
+            </section>
+        </div>
+
+        <!-- Table -->
+        <div class="mt-8 overflow-x-auto">
+            <table class="min-w-full bg-white rounded-lg shadow">
+                <thead class="bg-amber-900 text-white">
+
+                    <tr>
+                        <th class="px-4 py-2 text-left">Timestamp</th>
+                        <th class="px-4 py-2 text-left">Full Name</th>
+                        <th class="px-4 py-2 text-left">Email</th>
+                        <th class="px-4 py-2 text-left">Phone</th>
+                        <th class="px-4 py-2 text-left">Birth Date</th>
+                    </tr>
+                </thead>
+                <tbody id="timetableBody">
+                    <!-- Rows added dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Link to external JS -->
+    <script src="index.js"></script>
+
+</body>
+
+</html>
