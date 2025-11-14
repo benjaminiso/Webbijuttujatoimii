@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Add row
         const timestamp = new Date().toLocaleString();
         const row = document.createElement("tr");
-        row.classList.add("border-b");
+        row.classList.add("bg-gray-200", "border-b");
         row.innerHTML = `
             <td class="px-4 py-2">${timestamp}</td>
             <td class="px-4 py-2">${fullName}</td>
